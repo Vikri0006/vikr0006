@@ -1,0 +1,225 @@
+/* ===================== GRUNDINSTÄLLNINGAR ===================== */
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  line-height: 1.6;
+  background-color: #F9FAF7;
+  color: #222;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===================== HEADER / NAVIGATION ===================== */
+header {
+  background-color: #4B956F;
+  color: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative; /* för hamburger absolut */
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav {
+  flex-basis: auto;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: #F2E8CF;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===================== HERO ===================== */
+.hero {
+  background-size: cover;
+  background-position: center;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #F2E8CF;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ===================== KNAPPAR ===================== */
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #2F5D50;
+  color: #F2E8CF;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3E7865;
+}
+
+/* ===================== CARDS GRID ===================== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 3rem auto;
+  justify-items: center;
+}
+
+.cards-grid .card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 300px;
+}
+
+.cards-grid .card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===================== HELBILD ===================== */
+.full-image {
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F2E8CF;
+  text-align: center;
+}
+
+.full-image-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.full-image-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ===================== KONTAKTFORMULÄR ===================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background-color: #4B956F;
+  color: #F2E8CF;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ===================== RESPONSIV DESIGN ===================== */
+/* MOBIL (<768px) */
+@media (max-width: 767px) {
+  .menu-toggle { display: block; }
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #4B956F;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding: 0.5rem 0;
+    border-radius: 0 0 8px 8px;
+  }
+  .menu.show { display: flex; }
+  .menu li { padding: 0.8rem 1rem; }
+  .cards-grid { grid-template-columns: 1fr; justify-items: center; }
+}
+
+/* TABLET (768–1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .menu-toggle { display: block; }
+  .menu { display: none; flex-direction: column; background-color: #4B956F; position: absolute; top: 70px; right: 0; width: 200px; text-align: right; padding: 0.5rem 0; border-radius: 0 0 8px 8px; }
+  .menu.show { display: flex; }
+  .menu li { padding: 0.8rem 1rem; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); justify-items: center; }
+}
+
+/* DESKTOP (≥1024px) */
+@media (min-width: 1024px) {
+  .menu-toggle { display: none; }
+  .menu { display: flex !important; flex-direction: row; justify-content: flex-end; position: static; width: auto; background: none; }
+  .cards-grid { grid-template-columns: repeat(3, 1fr); justify-items: center; }
+}
+
